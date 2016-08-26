@@ -31,11 +31,11 @@ var CANCEL_DISTANCE_ON_SCROLL = 20;
 var defaultStyles = {
   root: {
     position: 'absolute',
-    top: 0,
+    top: 80,
     left: 0,
     right: 0,
-    bottom: 0,
-    overflow: 'hidden'
+    bottom: 60,
+    overflow: 'hidden',
   },
   sidebar: {
     zIndex: 2,
@@ -45,7 +45,6 @@ var defaultStyles = {
     transition: 'transform .3s ease-out',
     WebkitTransition: '-webkit-transform .3s ease-out',
     willChange: 'transform',
-    overflowY: 'auto'
   },
   content: {
     position: 'absolute',
@@ -53,7 +52,6 @@ var defaultStyles = {
     left: 0,
     right: 0,
     bottom: 0,
-    overflow: 'auto',
     transition: 'left .3s ease-out, right .3s ease-out'
   },
   overlay: {
@@ -365,10 +363,7 @@ var Sidebar = function (_React$Component) {
         ),
         _react2.default.createElement('div', { className: this.props.overlayClassName,
           style: overlayStyle,
-          role: 'presentation',
-          tabIndex: '0',
-          onClick: this.overlayClicked
-        }),
+          onClick: this.overlayClicked, onTouchTap: this.overlayClicked }),
         _react2.default.createElement(
           'div',
           { className: this.props.contentClassName, style: contentStyle },
